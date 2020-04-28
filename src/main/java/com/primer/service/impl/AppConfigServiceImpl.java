@@ -6,6 +6,8 @@ import com.primer.service.AppConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author HIFeng
  */
@@ -22,6 +24,11 @@ public class AppConfigServiceImpl implements AppConfigService {
     @Override
     public AppConfig save(AppConfig appConfig) {
         return appConfigDao.save(appConfig);
+    }
+
+    @Override
+    public List<AppConfig> findAll() {
+        return this.appConfigDao.findAll();
     }
 
 }
