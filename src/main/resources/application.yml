@@ -1,0 +1,17 @@
+spring:
+  jmx:
+    enabled: false
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+  # 配置方言com.zsoltfabok包中
+  database-platform: org.hibernate.dialect.SQLiteDialect
+  # 最好改成false，自己手动建表
+  generate-ddl: false
+  #jpa.hibernate.ddl-auto 仅支持create-drop和create
+
+javafx:
+  title: fx_base_框架
+  stage:
+    resizable: true
