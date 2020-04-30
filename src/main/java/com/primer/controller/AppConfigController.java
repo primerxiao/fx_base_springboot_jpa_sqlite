@@ -5,14 +5,12 @@ import com.primer.entity.AppConfig;
 import com.primer.service.AppConfigService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.lang.reflect.Type;
 import java.util.Objects;
 
 /**
