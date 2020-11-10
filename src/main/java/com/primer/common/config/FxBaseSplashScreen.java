@@ -8,14 +8,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 /**
  * 启动图片配置类
+ *
+ * @author HIFeng
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class FxBaseSplashScreen extends SplashScreen {
 
     /**

@@ -1,8 +1,10 @@
 package com.primer.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
+ * 程序涉及的字典表
+ *
  * @author HIFeng
  */
 @Entity
@@ -17,12 +21,19 @@ import javax.persistence.Table;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppConfig {
+public class AppDict {
     @Id
     @Column
-    private String configCode;
+    private String dictCode;
     @Column
-    private String configClass;
+    private String dictName;
     @Column
-    private String configValue;
+    private String groupCode;
+    @Column
+    private String groupName;
+    @Column
+    private long orderId;
+    @Column
+    private long status;
+
 }

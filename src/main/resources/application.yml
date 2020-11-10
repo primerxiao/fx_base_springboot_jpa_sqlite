@@ -12,6 +12,6 @@ spring:
   #jpa.hibernate.ddl-auto 仅支持create-drop和create
 
 javafx:
-  title: fx_base_框架
+  title: JavaFx应用
   stage:
-    resizable: true
+    resizable: false

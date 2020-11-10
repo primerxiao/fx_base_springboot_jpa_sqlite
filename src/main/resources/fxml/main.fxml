@@ -1,23 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="718.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.primer.controller.MainController">
+<FlowPane fx:id="flowPane" hgap="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1020.0" vgap="1.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.primer.controller.MainController">
    <children>
-      <TextField fx:id="testTextField" layoutX="14.0" layoutY="37.0" />
-      <Button layoutX="260.0" layoutY="37.0" mnemonicParsing="false" onAction="#saveAppConfig" text="Button" />
-      <ListView fx:id="listview" layoutX="30.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" />
-      <TableView fx:id="tableView" layoutX="374.0" layoutY="143.0" prefHeight="200.0" prefWidth="546.0">
-        <columns>
-          <TableColumn fx:id="tableColumn1" prefWidth="180.0" />
-          <TableColumn fx:id="tableColumn2" prefWidth="212.0" text="配置类型" />
-            <TableColumn fx:id="tableColumn3" prefWidth="153.0" text="配置值" />
-        </columns>
-      </TableView>
+      <MenuBar fx:id="menuBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1020.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="菜单">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#saveAppConfig" text="保存配置" />
+              <MenuItem mnemonicParsing="false" onAction="#closeApp" text="退出" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="帮助">
+            <items>
+              <MenuItem mnemonicParsing="false" text="关于" />
+            </items>
+          </Menu>
+        </menus>
+         <FlowPane.margin>
+            <Insets right="10.0" />
+         </FlowPane.margin>
+      </MenuBar>
+      <TabPane fx:id="tabPane" prefHeight="725.0" prefWidth="1020.0" style="-fx-border-width: 0;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Untitled Tab 1">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="167.0" prefWidth="902.0" />
+            </content>
+          </Tab>
+          <Tab text="数据源管理">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="1020.0">
+                     <children>
+                        <TableView fx:id="dbConfigTableView" layoutX="7.0" layoutY="6.0" prefHeight="502.0" prefWidth="1007.0">
+                          <columns>
+                            <TableColumn prefWidth="110.0" text="配置名" />
+                            <TableColumn prefWidth="146.0" text="驱动类" />
+                              <TableColumn prefWidth="118.0" text="用户名" />
+                              <TableColumn prefWidth="103.0" text="密码" />
+                              <TableColumn prefWidth="413.0" text="数据库连接" />
+                          </columns>
+                        </TableView>
+                        <JFXTextField fx:id="dbConfigName" layoutX="7.0" layoutY="518.0" promptText="请输入配置名" />
+                        <JFXTextField fx:id="dbConfigUrl" layoutX="5.0" layoutY="608.0" prefHeight="30.0" prefWidth="583.0" promptText="请输入数据库连接" />
+                        <JFXTextField fx:id="dbConfigUserName" layoutX="7.0" layoutY="568.0" promptText="请输入用户名" />
+                        <JFXTextField fx:id="dbConfigPassword" layoutX="214.0" layoutY="568.0" prefHeight="30.0" prefWidth="200.0" promptText="请输入密码" />
+                        <JFXComboBox fx:id="dbConfigDriverClass" layoutX="214.0" layoutY="518.0" prefHeight="30.0" prefWidth="200.0" promptText="请选择驱动类" />
+                        <JFXButton fx:id="addDbConfigBtn" layoutX="816.0" layoutY="518.0" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: greenyellow" text="新增记录" />
+                        <JFXButton fx:id="delDbConfigBtn" layoutX="925.0" layoutY="518.0" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: red" text="删除选中" />
+                     </children>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <JFXProgressBar fx:id="progressBar" prefHeight="2.0" prefWidth="901.0" progress="0.41" />
    </children>
-</AnchorPane>
+</FlowPane>
